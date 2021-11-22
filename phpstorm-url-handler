@@ -7,7 +7,9 @@
 # @license GPL
 # @author Stefan Auditor <stefan.auditor@erdfisch.de>
 
-arg=${1}
+#arg=${1}
+arg=$(echo -e `echo $1 | sed 's/+/ /g;s/%/\\\\x/g;'`)
+
 pattern=".*file(:\/\/|\=)(.*)&line=(.*)"
 
 # Get the file path.
